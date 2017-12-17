@@ -1,5 +1,10 @@
 # Unet-of-remote-sensing-image
 
+原始网址：https://github.com/cuilunan/Unet-sensing-image-tensorflow
+这里有一个process.py，是直接读了坐标并制作groundtruth 
+我准备自己先读一下，然后让学生训练。
+
+
   针对高分辨率遥感卫星进行地物识别，主要有15类的地物类型，包括各种农作物，工业用地，河流，水源，建筑物等。利用Unet结构进行语义分割，得到各个地物类型的场景分割图像，Unet结构和官方论文不太一样，自己根据理解进行了一些微调，改变了输出通道的数量，和上采样层后通道数量，每个巻积层后面加了batchNromalize层，正确率有一定的提高，最后finetune的15类分割准确率达到82%。
   
   数据集：主要采用的landsat多通道图像，根据美国官方网站提供的地物标签制作卫星图像的groundTruth,得到23000多张训练图像，每张224×224
